@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+Wiki.delete_all
+Wiki.create(:uri => 'FrontPage',
+            :name => 'FrontPage', 
+            :content => "This is the FrontPage.\r\n\r\nIt all starts from here."
+)

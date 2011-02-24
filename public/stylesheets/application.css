@@ -1,0 +1,76 @@
+ul, li {
+	list-style-type: none;
+}
+
+body, #application-page {
+	margin: 0 auto;
+	padding-top: 0px;
+}
+
+article#page, section#sidebar {
+	background-color: #fff;
+	min-height: 500px;
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+span#edit-link {
+	font-size: 14px;
+	line-height: 14px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+header#application-header {
+	padding: 2em 1em 1em 1em;
+}
+
+header#application-header {
+	background: #7d7e7d; /* old browsers */
+	background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* ie */
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+header#application-header > a {
+	width: 100%;
+	color: white;
+	font-size: 4em;
+}
+
+a, article#page header h1 a {
+	text-decoration: none;
+	color: #4965d5;
+}
+
+a:link, a:visited {
+	color: #4965d6;
+}
+
+a:hover {
+	color: #313186;
+	background-color: transparent;
+}
+
+header#application-header a:hover {
+	color: #ddd;
+	background-color: transparent;
+}
+
+header h1 {
+	line-height: 1em;
+	font-size: 2em;
+	border-bottom: 2px solid #000;
+	padding-top: 0.5em;
+	margin-bottom: 0.5em;
+}

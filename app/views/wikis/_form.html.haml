@@ -1,0 +1,14 @@
+= form_for @wiki, :remote => true do |f|
+  -if @wiki.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@wiki.errors.count, "error")} prohibited this wiki from being saved:"
+      %ul
+        - @wiki.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.hidden_field :name
+  .field
+    = f.text_area :content
+  .actions
+    = f.submit 'Save'

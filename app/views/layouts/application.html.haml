@@ -1,9 +1,21 @@
 !!! 5
 %html
-  %head
-    = csrf_meta_tag
-    /[if lt IE 9]
-      = javascript_include_tag 'html5'
-  %body
-    = yield
-    = javascript_include_tag :defaults
+ %head
+  %title 
+   = "Web Dashboard | #{@title}"
+  = #stylesheet_link_tag 'compiled/grid.css', :media => 'screen, projection'
+  = #stylesheet_link_tag 'compiled/text.css', :media => 'screen, projection'
+  = stylesheet_link_tag 'scaffold', 'less', 'application'
+  = csrf_meta_tag
+  /[if lt IE 9]
+   = javascript_include_tag 'html5'
+  = #javascript_include_tag 'html5', 'jrails', 'jquery.min', 'application'
+  = javascript_include_tag 'rails'
+ 
+ %body
+  %header#application-header 
+   = link_to 'litewiki', root_path
+  %article#page
+   = yield
+
+  = render 'layouts/sidebar'

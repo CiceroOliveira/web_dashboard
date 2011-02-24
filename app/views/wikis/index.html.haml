@@ -1,0 +1,15 @@
+%h1 Listing wikis
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @wikis.each do |wiki|
+    %tr
+      %td= wiki.name
+      %td= link_to 'Show', wiki
+      %td= link_to 'Edit', edit_wiki_path(wiki)
+      %td= link_to 'Destroy', wiki, :confirm => 'Are you sure?', :method => :delete unless wiki.frontpage?
