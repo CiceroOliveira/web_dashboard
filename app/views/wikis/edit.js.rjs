@@ -1,3 +1,1 @@
-$('.edit-link').bind('ajax:success', function(){
-  page.replace_html('page',render('edit'));
-});
+page.replace_html('page',render('edit'));
