@@ -1,0 +1,16 @@
+<section id='notice'>
+ <%= notice %>
+</section>
+
+<header>
+	<h1>
+  <%= @wiki.name %>
+	<span id='edit-link'>
+		<%= link_to 'Edit', @wiki, :action => :better_edit, :remote => true, :class=>'edit-link' %>
+	</span>
+	</h1>
+</header>
+
+<section id='content'>
+	<%= @wiki.content %>
+</section>

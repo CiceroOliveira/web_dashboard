@@ -1,5 +1,9 @@
 WebDashboard::Application.routes.draw do
-  resources :wikis
+  resources :wikis do
+    member do
+      post :better_edit
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

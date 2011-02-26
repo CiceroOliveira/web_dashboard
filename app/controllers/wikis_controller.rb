@@ -50,9 +50,14 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(page_to_edit)
     @title = "Editing: #{@wiki.name}"
     
+    puts "REQUEST=#{request.request_method}"
     respond_to do |format|
-      format.js
-      format.html
+      if request.xhr?
+        puts "PASSED HERE"
+        format.js
+      else
+        format.html
+      end
     end
   end
 
