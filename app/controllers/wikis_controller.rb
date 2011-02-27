@@ -1,4 +1,5 @@
 class WikisController < ApplicationController
+  
   # GET /wikis
   # GET /wikis.xml
   def index
@@ -16,13 +17,14 @@ class WikisController < ApplicationController
   def show
     @title = params[:id] || 'FrontPage'
     @wiki = Wiki.where(:uri => @title.gsub(' ','_')).first
+    @wikis = Wiki.all
     
     if @wiki.nil?
       @title.gsub('_',' ')
       redirect_to :controller => 'wikis', :action => 'new', :title => @title
     else
       @wiki.format_local_link
-      @wiki.content = textilize(@wiki.content).html_safe
+      #@wiki.content = textilize(@wiki.content).html_safe
     
       respond_to do |format|
         format.html # show.html.erb
@@ -37,6 +39,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.new
     @wiki.name = params[:title]
     @title = "Creating #{@wiki.name}"
+    @wikis = Wiki.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,7 +51,7 @@ class WikisController < ApplicationController
   def edit
     page_to_edit = params[:id] || 'FrontPage'
     @wiki = Wiki.find(page_to_edit)
-    @title = "Editing: #{@wiki.name}"
+    @title = "Edit: #{@wiki.name}"
     
     respond_to do |format|
       format.js

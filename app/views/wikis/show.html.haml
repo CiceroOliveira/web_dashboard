@@ -3,9 +3,11 @@
 
 %header
  %h1
-  = @wiki.name
+  = link_to @wiki.name, edit_wiki_path(@wiki), :remote => true
   %span#edit-link
-   = link_to 'edit', edit_wiki_path(@wiki), :remote => true, :method => 'get'
+   = #link_to 'edit', edit_wiki_path(@wiki), :remote => true
 
-%section#content
- = @wiki.content
+= render 'content'
+
+%section#edit-content.rounded
+ = render 'edit_content'

@@ -1,0 +1,11 @@
+//$('section#content').html("<%= escape_javascript(render('content')) %>");
+$('#wiki_content')
+	.effect('transfer', {to: $('section#content')}, 1000, 
+		function () {
+			$('section#content')
+				.effect('highlight', {}, 1500);
+			$('section#content').html("<%= escape_javascript(render('content')) %>");
+		}
+	);
+$('section#edit-content')
+  .effect('fade', {}, 500);

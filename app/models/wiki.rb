@@ -11,12 +11,12 @@ class Wiki
     self.name == "FrontPage"
   end
   
+  def eliminate_spaces(wiki)
+    wiki.gsub(/\s/,'_')
+  end
+  
   def format_local_link
     local_link_regex = /\[\[(\w+([^\]\]])*)\]\]/
     content.gsub!(local_link_regex) {"<a href=\"\\wikis\\#{eliminate_spaces($1)}\">#{$1}</a>"}
-  end
-  
-  def eliminate_spaces(wiki)
-    wiki.gsub(/\s/,'_')
   end
 end

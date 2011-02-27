@@ -4,6 +4,7 @@
    Pages
   %ol
    %li
-    = link_to "Page list", wikis_url
+    = link_to "Page list", wikis_url, :remote => true
+    = render 'pages_list'
    %li
     Latest edits
